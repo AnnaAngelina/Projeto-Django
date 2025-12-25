@@ -1,3 +1,5 @@
+{% extends 'learning_logs/base.html' %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +8,15 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>Bem vindo(a) ao Learning log</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim dolor delectus quo fuga, consequatur cum, totam laudantium, recusandae reprehenderit nisi unde cumque minima provident illum sed! Dignissimos ratione deserunt similique?</p>
+
+    {% block content %}
+
+    <main>
+        <h1>Bem vindo(a) ao Learning log</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim dolor delectus quo fuga, consequatur cum, totam laudantium, recusandae reprehenderit nisi unde cumque minima provident illum sed! Dignissimos ratione deserunt similique?</p>
+    </main>
+
+    {% endblock content %}
+
 </body>
 </html>
