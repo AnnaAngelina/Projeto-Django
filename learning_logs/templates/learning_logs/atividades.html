@@ -12,11 +12,14 @@
     {% block content %}
 
     <main>
-        <h1>Veja seu registro de atividades aqui</h1>
+        <h2>Veja seu registro de atividades aqui</h1>
         <div class="atividades">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim dolor delectus quo fuga, consequatur cum, totam laudantium, recusandae reprehenderit nisi unde cumque minima provident illum sed! Dignissimos ratione deserunt similique?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim dolor delectus quo fuga, consequatur cum, totam laudantium, recusandae reprehenderit nisi unde cumque minima provident illum sed! Dignissimos ratione deserunt similique?</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim dolor delectus quo fuga, consequatur cum, totam laudantium, recusandae reprehenderit nisi unde cumque minima provident illum sed! Dignissimos ratione deserunt similique?</p>
+            {% for topic in topics %}
+                <h3>{{ topic }}</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim dolor delectus quo fuga, consequatur cum, totam laudantium, recusandae reprehenderit nisi unde cumque minima provident illum sed! Dignissimos ratione deserunt similique?</p>
+            {% empty %}
+                <p>Parece que não há atividades registradas</p>
+            {% endfor %}
         </div>
     </main>
     

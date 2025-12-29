@@ -1,0 +1,67 @@
+    :root {
+    font-size: 16px;
+    --cinza: #F0F0F0;
+    }
+
+    * {
+    font-size: 1rem;
+    font-family: Arial;
+    box-sizing: border-box;
+    }
+
+    body {
+    background-color:aliceblue;
+    }
+
+    header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-radius: 1rem;
+    position: relative;
+    padding: 0.5rem 2rem 0.2rem 2rem;
+    top: -1rem;
+    background-color: white;
+    align-items: center;
+    margin-bottom: 3rem;
+    }
+
+    header .menu li a, header h1 a {
+    text-decoration: none;
+    color: black;
+    }
+
+    header .menu li a:hover, header h1 a:hover {
+    font-size: 1.02rem;
+    transition: 0.2s ease-in-out;
+    }
+
+    .menu ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    }
+
+    main {
+    width: 80rem;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: white;
+    }
+
+    .atividades {
+    gap: 1rem;
+    }
+
+    .atividades p::before{
+    content: '|';
+    font-size: 2rem;
+    position: relative;
+    right: 0.5rem;
+    top: 0.3rem;
+    color: crimson;
+    }
