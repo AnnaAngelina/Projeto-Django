@@ -12,19 +12,18 @@
     {% block content %}
 
     <main>
-        <h2>Veja seu registro de atividades aqui</h1>
         <div class="atividades">
-            {% for topic in topics %}
-                <h3>{{ topic }}</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim dolor delectus quo fuga, consequatur cum, totam laudantium, recusandae reprehenderit nisi unde cumque minima provident illum sed! Dignissimos ratione deserunt similique?</p>
-            {% empty %}
-                <p>Parece que não há atividades registradas</p>
-            {% endfor %}
+            <h2>Atividades</h2>
+            <p>Veja seu registro de atividades aqui</p>
+            <ul>
+                {% for topic in topics %}
+                    <a href="{% url 'anotacoes' topic.id %}"><li>{{ topic }}</li></a>
+                {% empty %}
+                    <p>Parece que não há atividades registradas</p>
+                {% endfor %}
+            </ul>
         </div>
     </main>
     
 
     {% endblock content %}
-
-</body>
-</html>

@@ -1,19 +1,24 @@
-    :root {
+:root {
     font-size: 16px;
     --cinza: #F0F0F0;
-    }
+}
 
-    * {
+* {
     font-size: 1rem;
     font-family: Arial;
     box-sizing: border-box;
-    }
+}
 
-    body {
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: -0.1rem;
+}
+
+body {
     background-color:aliceblue;
-    }
+}
 
-    header {
+header {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -24,25 +29,25 @@
     background-color: white;
     align-items: center;
     margin-bottom: 3rem;
-    }
+}
 
-    header .menu li a, header h1 a {
+header .menu li a, header h1 a {
     text-decoration: none;
     color: black;
-    }
+}
 
-    header .menu li a:hover, header h1 a:hover {
+header .menu li a:hover, header h1 a:hover {
     font-size: 1.02rem;
     transition: 0.2s ease-in-out;
-    }
+}
 
-    .menu ul {
+.menu ul {
     display: flex;
     gap: 2rem;
     list-style: none;
-    }
+}
 
-    main {
+main {
     width: 80rem;
     padding: 1rem 2rem;
     margin: 0 auto;
@@ -51,17 +56,17 @@
     flex-direction: column;
     flex-grow: 1;
     background-color: white;
-    }
+}
 
-    .atividades {
+.atividades {
     gap: 1rem;
-    }
+}
 
-    .atividades p::before{
+.atividades h3::before{
     content: '|';
     font-size: 2rem;
     position: relative;
     right: 0.5rem;
     top: 0.3rem;
     color: crimson;
-    }
+}
