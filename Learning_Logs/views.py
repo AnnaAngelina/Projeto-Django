@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Topic
+from .models import Topic, Entry
 from .forms import Topicform, Entryform
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -43,3 +43,16 @@ def new_entry(request, id_topic):
             return HttpResponseRedirect(reverse('anotacoes', args=[id_topic]))
     context = {'topic': topic, 'form': form}
     return render(request, 'learning_logs/new_entry.html', context)
+
+def edit_entry(request, id_entry):
+    entry = Entry.objects.get(id=id_entry)
+    topic = entry.topic
+    if request.method != 'POST':
+        form = Entryform(instance=entry)
+    else:
+        form = Entryform(instance=entry,data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('anotacoes', args=[topic.id]))
+    context = {'entry': entry, 'topic': topic, 'form': form}
+    return render(request, 'learning_logs/edit_entry.html', context)

@@ -18,10 +18,10 @@
             <h3>{{ topic }}</h3>
             {% for entry in entries %}
                 <div> 
-                    <p>Anotação registrada em: </p>
-                    <p class="date">{{ entry.date_added | date:"M d, Y H:i" }}</p>
+                    <p>Anotação registrada em: <span class="date">{{ entry.date_added | date:"M d, Y H:i" }}</span></p>
                 </div> 
                 <p>{{ entry.text | linebreaks }}</p>
+                <p><a class="btn-editar" href="{% url 'edit_entry' entry.id %}">Editar anotação</a></p>
             {% empty %}
                 <p>Parece que não há anotacoes registradas para esta atividade</p>
             {% endfor %}
