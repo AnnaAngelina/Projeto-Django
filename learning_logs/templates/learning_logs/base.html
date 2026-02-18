@@ -193,16 +193,23 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1><a href="{% url 'index' %}">Learning Log</a></h1>
-        <nav class="menu">
-            <ul>
-                <li><a href="{% url 'atividades' %}">Atividades</a></li>
-                <li><a href="">Registros</a></li>
-                <li><a href="">Perfil</a></li>
-            </ul>
-        </nav>
-    </header>
+    {% if user.is_authenticated %}
+        <header>
+            <h1><a href="{% url 'index' %}">Learning Log — Olá, {{user }}</a></h1>
+            <nav class="menu">
+                <ul>
+                    <li><a href="{% url 'atividades' %}">Atividades</a></li>
+                    <li><a href="">Registros</a></li>
+                    <li><a href="">Perfil</a></li>
+                </ul>
+            </nav>
+        </header>
+
+    {% else %}
+        {% if request.resolver_match.url_name != 'login' %} <!-- pega o nome da url na qual a requisição está e verifica se é a de login --> 
+            <a href="{% url 'login' %}">Entrar em minha conta</a>
+        {% endif %}
+    {% endif %}
 
     {% block content %}
 
