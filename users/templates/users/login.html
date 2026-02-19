@@ -11,7 +11,7 @@
     
     {% block content %}
 
-    {% if form.errors %}
+    {% if error %}
         <p>Não foi possível encontrar esta conta. Verifique as informações e tente novamente</p>
     {% endif %}
 
@@ -20,7 +20,6 @@
         {{ form.as_p }}
 
         <button type="submit">Entrar</button>
-        <input type="hidden" name="next" value="{% url 'index' %}">
     </form>
 
     {% endblock content %}
