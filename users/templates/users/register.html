@@ -11,15 +11,14 @@
     
     {% block content %}
 
-    <form class="login-form" action="{% url 'login' %}" method="post">
+    <form class="login-form" action="{% url 'register' %}" method="post">
         <fieldset>
-            <legend><h2>Login</h2></legend>
+            <legend><h2>Cadastrar-se</h2></legend>
             {% csrf_token %}
             {{ form.as_p }}
-            <p id="no-account">Não tem uma conta?<a href="{% url 'register' %}">Cadastrar-se</a></p>
         </fieldset>
         
-        <button type="submit">Entrar</button>
+        <button type="submit">Registrar</button>
         <input type="hidden" name="next" value="{% url 'index' %}">
     </form>
 
